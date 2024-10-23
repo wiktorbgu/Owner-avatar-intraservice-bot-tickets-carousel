@@ -1,0 +1,33 @@
+create table DESK_USERGROUPS_LOAD
+(
+  id          NUMBER,
+  name        VARCHAR2(4000),
+  description VARCHAR2(4000),
+  date_in     DATE default sysdate
+)
+tablespace DJANGO
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table DESK_USERGROUPS_LOAD
+  add constraint PK_DESK_USERGROUPS_LOAD unique (ID)
+  using index 
+  tablespace DJANGO
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+

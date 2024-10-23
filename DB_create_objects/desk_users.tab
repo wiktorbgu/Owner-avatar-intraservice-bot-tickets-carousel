@@ -1,0 +1,40 @@
+create table DESK_USERS
+(
+  id             NUMBER not null,
+  enabled        NUMBER(1) default 0 not null,
+  name           VARCHAR2(4000),
+  off_start_date DATE default to_date('01.01.2000','dd.mm.yyyy') not null,
+  off_end_date   DATE default to_date('01.01.2000','dd.mm.yyyy') not null,
+  firstname      VARCHAR2(4000),
+  lastname       VARCHAR2(4000),
+  middlename     VARCHAR2(4000),
+  email          VARCHAR2(4000),
+  username       VARCHAR2(4000),
+  ts             DATE default sysdate not null
+)
+tablespace DJANGO
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table DESK_USERS
+  add constraint PK_DESK_USERS unique (ID)
+  using index 
+  tablespace DJANGO
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+

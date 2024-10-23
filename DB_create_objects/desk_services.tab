@@ -1,0 +1,36 @@
+create table DESK_SERVICES
+(
+  id           NUMBER,
+  enabled      NUMBER default 0 not null,
+  name         VARCHAR2(4000),
+  fullname     VARCHAR2(4000),
+  description  VARCHAR2(4000),
+  last_user_id NUMBER,
+  date_in      DATE default sysdate
+)
+tablespace DJANGO
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table DESK_SERVICES
+  add constraint PK_DESK_SERVICES unique (ID)
+  using index 
+  tablespace DJANGO
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+

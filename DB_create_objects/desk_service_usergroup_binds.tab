@@ -1,0 +1,18 @@
+create table DESK_SERVICE_USERGROUP_BINDS
+(
+  service_id   NUMBER,
+  usergroup_id NUMBER,
+  date_in      DATE default sysdate
+)
+tablespace DJANGO
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
