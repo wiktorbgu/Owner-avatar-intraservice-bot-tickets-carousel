@@ -19,7 +19,7 @@ while (True):
             if users:
                 last_user_id = users[0]['last_user_id']
                 print(f'last_user_id {last_user_id}')
-                # выргужаем бесхозные заявки по сервису
+                # выгружаем бесхозные заявки по сервису
                 tasklist = intra.get_tasks(service_id)
                 # проходимся по всем выбранным заявкам и раскидываем согласно очереди
                 for r, row in enumerate(tasklist['value']):
